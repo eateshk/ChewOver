@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang=''>
+<head>
+   <meta charset='utf-8'>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="styles.css">
+   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+   <script src="script.js"></script>
+   <title>CSS MenuMaker</title>
+</head>
+<body>
+
+<div id='cssmenu'>
+<ul>
+   <li><a href='#'>Home</a></li>
+   <li class='active'><a href='#'>Products</a>
+      <ul>
+         <li><a href='#'>Product 1</a>
+         </li>
+         <li><a href='#'>Product 2</a>
+         </li>
+      </ul>
+   </li>
+   <li><a href='#'>About</a></li>
+   <li><a href='#'>Contact</a></li>
+</ul>
+</div>
+
+</body>
+<html>
+
+<script type="text/javascript">
+   var ms = [];
+   var ss = [];
+</script>
+
+<script type="text/javascript">
+    function ShowHideDiv() {
+        var multiSelect = document.getElementById("multiSelect");
+        var singleSelect = document.getElementById("singleSelect");
+        singleSelect.style.display = selectionDropDown.value == "M" ? "block" : "none";
+        ms.push(singleSelect.value);
+        console.log("adding value into ms - ")
+        console.log(ms)
+    };
+    function SSButtonHandler() {
+      var singleSelect = document.getElementById("singleSelect").value;
+      console.log("Done Selected for SS");
+      console.log(singleSelect);
+      var form_elements = document.getElementById('SSForm').elements;
+      var selectedGender = form_elements['gender'].value;
+      console.log(selectedGender);
+      ss.push()
+    };
+</script>
+<span>Choose Type of Poll Query</span>
+    <select id = "selectionDropDown" onchange = "ShowHideDiv()">
+         <option disabled selected value> -- select an option -- </option>
+         <option value="M">Multiple Answers</option>
+         <option value="S">Single Answer</option>            
+    </select>
+<hr/>
+<div id="multiSelect" style="display: none">
+    Passport Number:
+    <input type="text" id="txtPassportNumber" />
+</div>
+
+<div id="singleSelect" style="display: none">
+   <form id="SSForm">
+     <input type="radio" name="gender" value="male"> Male<br>
+     <input type="radio" name="gender" value="female"> Female<br>
+     <input type="radio" name="gender" value="other" onclick="alert('hello');"> Other
+   </form>
+   <button onclick="SSButtonHandler()">Done</button>
+</div>
+
+
+<!-- Make an ultimate list here out of ms/ss variables. -->
