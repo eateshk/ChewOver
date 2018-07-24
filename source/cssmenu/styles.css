@@ -1,3 +1,14 @@
 .main-container{
   margin-top:100px !important;
 }
+.font-style{
+  font-size: 12px;
+}
+
+.poll-choose{
+  width: 27% !important;
+}
+
+#singleSelect{
+  margin-top:20px;
+}
