@@ -134,8 +134,10 @@ function loadEverything(){
         {
           var labelname = everything[i].options[j];
           var value = i+ "_" + j;
-          var create = $('<input type="radio" value="'+value+'"><label>'+labelname+'</label><br>');
-          div.append(create);
+          var create = '<br><input type="radio" value="'+value+'"><label>'+labelname+'</label><br>';
+          var radioFragment = document.createElement('div');
+          radioFragment.innerHTML = create;
+          div.append(radioFragment.firstChild);
         }
         allView.append(div);
         allView.style.display = "block";
