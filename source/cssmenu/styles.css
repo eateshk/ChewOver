@@ -14,5 +14,9 @@
 }
 
 li{
-  color: rgba(62, 62, 212, 0.925);
+  color: rgba(9, 9, 46, 0.925);
+}
+
+#myUL{
+  list-style: none;
 }
