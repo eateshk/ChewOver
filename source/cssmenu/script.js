@@ -137,10 +137,12 @@ function loadEverything(){
         {
           var labelname = everything[i].options[j];
           var value = i+ "_" + j;
-          var create = '<input type="radio" value="'+value+'"><label>'+labelname+'</label><br>';
-          var radioFragment = document.createElement('div');
-          radioFragment.innerHTML = create;
-          div.append(radioFragment.firstChild);
+          var ih = `<input type="radio" value="${value}"> <label>${labelname}</label><br>`;
+          var create = `<input type="radio" value="${value}">`;
+          var create1 = `<label>${labelname}</label><br>`;
+          var d = document.createElement('div');
+          d.innerHTML = ih;
+          div.appendChild(d)
         }
         allView.append(div);
         allView.style.display = "block";
