@@ -19,6 +19,38 @@ var everything = [
       "Other"
     ]
   },
+  {
+    type : "comment",
+    id: 'c1',
+    avatar: '../asset/image/avatar.png',
+    author: 'author',
+    metadata: 'metdata',
+    text: 'sometext doggy',
+    children: [{
+      id: 'c2',
+      avatar: '../asset/image/avatar.png',
+      author: 'child2 author',
+      metadata: 'metdata',
+      text: 'sometext',
+      children: [{
+        id: 'c2.1',
+        avatar: '../asset/image/avatar.png',
+        author: 'child2.1 author',
+        metadata: 'metdata',
+        text: 'sometext',
+        children: []
+      }]
+    },
+    {
+      id: 'c5',
+      avatar: '../asset/image/avatar.png',
+      author: 'child5 added',
+      metadata: 'metdata',
+      text: 'sometext',
+      children: []
+    }
+    ]
+  }
 ];
 
 
@@ -192,12 +224,18 @@ function loadEverything(){
         allView.append(div);
         allView.style.display = "block";
       }
-      else{
+      else if(everything[i].type == "comment"){
         var div = document.createElement('div');
         var h4=document.createElement('h4');
         h4.innerText = "This is a new type of component coming soon";
         div.appendChild(h4);
         allView.append(div);
+      }
+      else{
+        var s = '<div class="ui threaded comments"><h3 id="comment-start" class="ui dividing header">Comments</h3></div>';
+        var d = document.createElement('div');
+        d.innerHTML = s;
+        allView.appendChild(d);
       }
     }
 }
