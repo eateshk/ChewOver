@@ -21,10 +21,25 @@ var everything = [
   },
 ];
 
+
+function showSearchedItems(){
+  var searchString = document.getElementById("searchForumsText").value;
+  console.log(searchString);
+  document.getElementById("createPollSection").style.display = "none";
+  document.getElementById("searchForums").style.display = "block";
+  loadFiltered(searchString);
+}
+
+
+function showForumSearch(){
+  document.getElementById("createPollSection").style.display = "none";
+  document.getElementById("searchForums").style.display = "block";
+}
+
 function showCreatePolls(){
   console.log("showcreatepolls called");
-  var createPoll = document.getElementById("createPollSection");
-  createPoll.style.display = "block";
+  document.getElementById("searchForums").style.display = "none";
+  document.getElementById("createPollSection").style.display = "block";
   // todo : make others none when they're added.
 }
 
@@ -189,8 +204,6 @@ function loadEverything(){
 
 function loadLatest(){
   var allView = document.getElementById("everything");
-//     allView.style.display = "block";
-
     for(var i=0;i<everything.length;i++)
     {
       if(everything[i].type == "radio"){
@@ -223,6 +236,45 @@ function loadLatest(){
     }
 }
 
+function loadFiltered(searchString){
+  var filtered = everything;
+  var searchList = searchString.split(",").map(item => item.trim());
+  console.log("searchlist is " + searchList);
+  var allView = document.getElementById("everything");
+  allView.innerHTML = '';
+    for(var i=0;i<filtered.length;i++)
+    {
+      if(searchList.length != 0 && !keywordPresent(searchList, filtered[i].title))
+        continue;
+      if(filtered[i].type == "radio")
+      {
+        var div = document.createElement('div');
+        var h4=document.createElement('h4');
+        h4.innerText = filtered[i].title;
+        div.appendChild(h4);
+        for(var j = 0 ; j< filtered[i].options.length; j++)
+        {
+          var labelname = filtered[i].options[j];
+          var value = i+ "_" + j;
+          var ih = `<input type="radio" value="${value}"> <label>${labelname}</label><br>`;
+          var create = `<input type="radio" value="${value}">`;
+          var create1 = `<label>${labelname}</label><br>`;
+          var d = document.createElement('div');
+          d.innerHTML = ih;
+          div.appendChild(d)
+        }
+        allView.append(div);
+        allView.style.display = "block";
+      }
+      else{
+        var div = document.createElement('div');
+        var h4=document.createElement('h4');
+        h4.innerText = "This is a new type of component coming soon";
+        div.appendChild(h4);
+        allView.append(div);
+      }
+    }
+}
 
 function createRadioElement(name, checked) {
     var radioHtml = '<input type="radio" name="' + name + '"';
@@ -236,3 +288,12 @@ function createRadioElement(name, checked) {
 
     return radioFragment.firstChild;
 }
+
+function keywordPresent(keywords, s){
+  for(var i=0; i<keywords.length; i++){
+    if(s!=undefined && s.includes(keywords[i]))
+      return true;
+  }
+  return false;
+}
+

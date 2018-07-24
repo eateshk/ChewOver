@@ -16,7 +16,20 @@
 
 <body>
   <div class="ui container segment main-container">
-    <button onclick="showCreatePolls()">CreatePoll</button>
+    <button onclick="showForumSearch()">Search Forums</button>
+    <button onclick="showCreatePolls()">Create Survey Poll</button>
+    <button onclick="showCreatePolls()">Create Discussion Thread</button>
+
+    <div id="searchForums">
+      <div class="ui right aligned category search">
+      <div class="ui icon input">
+      <input id="searchForumsText" class="prompt" type="text" placeholder="Search Forums ..">
+      <i class="search icon" onclick="showSearchedItems"></i>
+      </div>
+      <button onclick="showSearchedItems()">Go</button>
+      </div>
+    </div>
+
     <div id="createPollSection" style="display: none">
       <div class="ui container center poll-choose">
           <span>Choose Type of Poll Query</span>
@@ -74,6 +87,7 @@
           multiSelect.style.display = "none";
           loadEverything();
       </script>
+</div>
   </div>
 
   </ul>
