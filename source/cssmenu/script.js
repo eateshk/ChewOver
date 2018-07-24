@@ -244,7 +244,7 @@ function loadFiltered(searchString){
   allView.innerHTML = '';
     for(var i=0;i<filtered.length;i++)
     {
-      if(searchList.length != 0 && !keywordPresent(searchList, filtered[i].title))
+      if(searchList.length != 0 && !isKeywordPresent(searchList, filtered[i]))
         continue;
       if(filtered[i].type == "radio")
       {
@@ -289,7 +289,12 @@ function createRadioElement(name, checked) {
     return radioFragment.firstChild;
 }
 
-function keywordPresent(keywords, s){
+function isKeywordPresent(keywords, o){
+  var s = "";
+  if(o.type == "radio")
+    s = o.title;
+  else if(o.type == "comments")
+    s = o.text
   for(var i=0; i<keywords.length; i++){
     if(s!=undefined && s.includes(keywords[i]))
       return true;
