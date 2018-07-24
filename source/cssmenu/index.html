@@ -15,12 +15,11 @@
 <body>
   <div class="ui container segment main-container">
       <span>Choose Type of Poll Query</span>
-      <select id="selectionDropDown" onchange="ShowHideDiv()">
-        <option disabled selected value> -- select an option -- </option>
+      <select id="selectionDropDown" class = "ui selection dropdown" onchange="ShowHideDiv()">
+        <option disabled selected value> select your option here </option>
         <option value="M">Multiple Answers</option>
         <option value="S">Single Answer</option>
       </select>
-      <hr/>
       <div id="multiSelect" style="display: none">
         <form id="MSForm">
           GMail
@@ -36,8 +35,9 @@
       <div id="singleSelect" style="display: none">
         <form id="SSForm">
           Generate Your Single Option Question :
-          <br>
-          <input type="text" id="gender" value="Query Title">
+          <div class="ui input focus">
+            <input type="text" id="gender" value="Enter your question here">
+          </div>
         </form>
         <button onclick="SSButtonHandler()">Done</button>
       </div>
