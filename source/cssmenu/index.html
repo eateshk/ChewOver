@@ -14,12 +14,14 @@
 
 <body>
   <div class="ui container segment main-container">
-      <span>Choose Type of Poll Query</span>
-      <select id="selectionDropDown" class = "ui selection dropdown" onchange="ShowHideDiv()">
-        <option disabled selected value> select your option here </option>
-        <option value="M">Multiple Answers</option>
-        <option value="S">Single Answer</option>
-      </select>
+      <div class="ui container center poll-choose">
+          <span>Choose Type of Poll Query</span>
+        <select id="selectionDropDown" class = "ui dropdown font-style" onchange="ShowHideDiv()">
+          <option disabled selected value> select your option here </option>
+          <option value="M">Multiple Answers</option>
+          <option value="S">Single Answer</option>
+        </select>
+      </div>
       <div id="multiSelect" style="display: none">
         <form id="MSForm">
           GMail
@@ -33,9 +35,13 @@
       </div>
     
       <div id="singleSelect" style="display: none">
+        <h4 class="ui horizontal divider header">
+        <i class="bar chart icon"></i>
+        Creating a poll for you !
+        </h4> 
         <form id="SSForm">
           Generate Your Single Option Question :
-          <div class="ui input focus">
+          <div class="ui fluid input focus">
             <input type="text" id="gender" value="Enter your question here">
           </div>
         </form>
