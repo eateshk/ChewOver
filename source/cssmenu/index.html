@@ -16,13 +16,15 @@
 
 <body>
   <div class="ui container segment main-container">
+    <button onclick="showCreatePolls()">CreatePoll</button>
+    <div id="createPollSection" style="display: none">
       <div class="ui container center poll-choose">
           <span>Choose Type of Poll Query</span>
-        <select id="selectionDropDown" class = "ui dropdown font-style" onchange="ShowHideDiv()">
-          <option disabled selected value> select your option here </option>
-          <option value="M">Single Answers</option>
-          <option value="S">Multiple Answer</option>
-        </select>
+          <select id="selectionDropDown" class = "ui dropdown font-style" onchange="ShowHideDiv()">
+            <option disabled selected value> select your option here </option>
+            <option value="M">Single Answers</option>
+            <option value="S">Multiple Answer</option>
+          </select>
       </div>
       <h4 class="ui horizontal divider header">
           <i class="bar chart icon"></i>
@@ -61,12 +63,17 @@
     
       <ul  id="myUL">
       </ul>
-      
+      </div>
       <div class="ui container" id="everything">
-        <h3>Poll Queries Below</h3>
+        <h3>Discussions/Poll Below</h3>
         <form id="everythingForm">
         </form>
       </div>
+      <script type="text/javascript">
+          singleSelect.style.display = "block";
+          multiSelect.style.display = "none";
+          loadEverything();
+      </script>
   </div>
 
   </ul>

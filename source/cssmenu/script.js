@@ -21,6 +21,13 @@ var everything = [
   },
 ];
 
+function showCreatePolls(){
+  console.log("showcreatepolls called");
+  var createPoll = document.getElementById("createPollSection");
+  createPoll.style.display = "block";
+  // todo : make others none when they're added.
+}
+
 function ShowHideDiv() {
   var multiSelect = document.getElementById("multiSelect");
   var singleSelect = document.getElementById("singleSelect");
