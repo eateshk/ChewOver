@@ -116,14 +116,14 @@ function finishRadio() {
     var lis = parent.getElementsByTagName("li");
     radioQuery = {
           "title" : document.getElementById("radioTitle").innerText,
-          "options" : [
-            
-          ]
-        };
-    lis.forEach(function (element) {
-      everything.push(
-        );
-    });
-    console.log("printing lis");
-    console.log(lis);
+          "options" : []
+    };
+    
+    for(i =0 ;i<lis.length; i++)
+    {
+      radioQuery.options.push(lis[i].innerText.slice(0, -1));
+    }
+    
+    everything.push(radioQuery);
+    console.log(radioQuery);
   }
