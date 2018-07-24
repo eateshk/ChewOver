@@ -129,12 +129,14 @@ function loadEverything(){
       if(everything[i].type == "radio")
       {
         var div = document.createElement('div');
-        div.innerHTML = everything[i].title;
+        var h4=document.createElement('h4');
+        h4.innerText = everything[i].title;
+        div.appendChild(h4);
         for(var j = 0 ; j< everything[i].options.length; j++)
         {
           var labelname = everything[i].options[j];
           var value = i+ "_" + j;
-          var create = '<br><input type="radio" value="'+value+'"><label>'+labelname+'</label><br>';
+          var create = '<input type="radio" value="'+value+'"><label>'+labelname+'</label><br>';
           var radioFragment = document.createElement('div');
           radioFragment.innerHTML = create;
           div.append(radioFragment.firstChild);
@@ -147,7 +149,7 @@ function loadEverything(){
 
 function createRadioElement(name, checked) {
     var radioHtml = '<input type="radio" name="' + name + '"';
-    if ( checked ) {
+    if ( checked ) {  
         radioHtml += ' checked="checked"';
     }
     radioHtml += '/>';
