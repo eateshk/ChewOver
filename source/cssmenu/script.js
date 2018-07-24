@@ -110,7 +110,23 @@ var myNodelist = document.getElementsByTagName("LI");
     }
   }
 
+function finishRadio() {
 
+    var parent = document.getElementById("myUL");
+    var lis = parent.getElementsByTagName("li");
+    radioQuery = {
+          "title" : document.getElementById("radioTitle").innerText,
+          "options" : [
+            
+          ]
+        };
+    lis.forEach(function (element) {
+      everything.push(
+        );
+    });
+    console.log("printing lis");
+    console.log(lis);
+  }
 (function($) {
 
   $.fn.menumaker = function(options) {
