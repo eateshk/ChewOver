@@ -116,7 +116,7 @@ function finishRadio() {
     {
       console.log(lis[i])
       if(lis[i].style.display != 'none')
-        radioQuery.options.push(lis[i].innerText.slice(0, -1));
+        radioQuery.options.push(lis[i].innerText);
     }
     everything.push(radioQuery);
     //loadEverything();
