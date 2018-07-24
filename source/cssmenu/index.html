@@ -1,193 +1,59 @@
 <!doctype html>
 <html lang=''>
-<head>
-   <meta charset='utf-8'>
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="styles.css">
-   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-   <script src="script.js"></script>
-   <title>CSS MenuMaker</title>
-</head>
-<body>
 
-<div id='cssmenu'>
-<ul>
-   <li><a href='#'>Home</a></li>
-   <li class='active'><a href='#'>Products</a>
-      <ul>
-         <li><a href='#'>Product 1</a>
-         </li>
-         <li><a href='#'>Product 2</a>
-         </li>
-      </ul>
-   </li>
-   <li><a href='#'>About</a></li>
-   <li><a href='#'>Contact</a></li>
-</ul>
-</div>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css" />
+  <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+  <script src="script.js"></script>
+  <title>CSS MenuMaker</title>
+</head>
+
+<body>
+  <span>Choose Type of Poll Query</span>
+  <select id="selectionDropDown" onchange="ShowHideDiv()">
+    <option disabled selected value> -- select an option -- </option>
+    <option value="M">Multiple Answers</option>
+    <option value="S">Single Answer</option>
+  </select>
+  <hr/>
+  <div id="multiSelect" style="display: none">
+    <form id="MSForm">
+      GMail
+      <input type="checkbox" name="gender">
+      <br> HotMail
+      <input type="checkbox" name="gender">
+      <br> Other Email Service
+      <input type="checkbox" name="gender" onclick="myFunction()">
+    </form>
+    <button onclick="MSButtonHandler()">Done</button>
+  </div>
+
+  <div id="singleSelect" style="display: none">
+    <form id="SSForm">
+      Generate Your Single Option Question :
+      <br>
+      <input type="text" id="gender" value="Query Title">
+    </form>
+    <button onclick="SSButtonHandler()">Done</button>
+  </div>
+
+  <div id="everything">
+    <form id="everythingForm">
+    </form>
+  </div>
+
+  <div id="radioEditor" class="header" style="display: none">
+    <h3 id="radioTitle">Title ?</h3>
+    <input type="text" id="myInput" placeholder="Title...">
+    <span onclick="newElement()" class="addBtn">Add</span>
+  </div>
+
+  <ul id="myUL">
+  </ul>
 
 </body>
 <html>
-
-<script type="text/javascript">
-   var everything = [];
-</script>
-
-<script type="text/javascript">
-    
-    function ShowHideDiv() {
-        var multiSelect = document.getElementById("multiSelect");
-        var singleSelect = document.getElementById("singleSelect");
-        if(selectionDropDown.value == "M"){
-          console.log("singleSelect found");
-          singleSelect.style.display = "block";
-          multiSelect.style.display = "none";
-        }
-        else if(selectionDropDown.value == "S"){
-         console.log("multiSelect found");
-         multiSelect.style.display = "block";
-         singleSelect.style.display = "none"; 
-        }
-        console.log("everything is below :");
-        console.log(everything);
-    };
-
-    function SSButtonHandler() {
-      var singleSelect = document.getElementById("singleSelect").value;
-      document.getElementById("radioTitle").innerText = document.getElementById('gender').value; 
-      console.log("value is " + document.getElementById('gender').value);
-      document.getElementById("radioEditor").style.display = "block"
-      console.log("Done Selected for SS");
-      var form_elements = document.getElementById('SSForm').elements;
-      var selectedGender = form_elements['gender'].value;
-      console.log(form_elements['gender'][0]);
-      everything.push(
-        {
-          "type" : "singleSelect",
-          "value": form_elements['gender'].value,
-          "values" : form_elements['gender']
-        });
-      UpdateEverything();
-    };
-
-    function UpdateEverything(){
-      console.log("Updating everything");
-      everything.forEach(function(element) {
-        if(element.type == "singleSelect"){
-          console.log("single select found, updating !");
-          /*
-          var form = document.getElementById("everythingForm");
-
-          element.values.forEach(function(el){
-            var i = document.createElement("input");
-            i.setAttribute('type',"radio");
-            i.setAttribute('name',"testName");
-            form.appendChild(el);
-          });
-          */
-          // e.appendChild(element.values);
-        }
-      });
-    }
-</script>
-<span>Choose Type of Poll Query</span>
-    <select id = "selectionDropDown" onchange = "ShowHideDiv()">
-         <option disabled selected value> -- select an option -- </option>
-         <option value="M">Multiple Answers</option>
-         <option value="S">Single Answer</option>            
-    </select>
-<hr/>
-<div id="multiSelect" style="display: none">
-    <form id="MSForm">
-      GMail <input type="checkbox" name="gender"><br>
-      HotMail<input type="checkbox" name="gender"><br>
-      Other Email Service<input type="checkbox" name="gender" onclick="myFunction()">
-    </form>
-    <button onclick="MSButtonHandler()">Done</button>
-</div>
-
-<div id="singleSelect" style="display: none">
-   <form id="SSForm">
-    Generate Your Single Option Question : <br>
-    <input type="text" id="gender" value="Query Title">
-   </form>
-   <button onclick="SSButtonHandler()">Done</button>
-</div>
-
-<div id="everything">
-  <form id="everythingForm">
-
-  </form>
-</div>
-
-
-<div id="radioEditor" class="header" style="display: none">
-  <h3 id = "radioTitle">Title ?</h3>
-  <input type="text" id="myInput" placeholder="Title...">
-  <span onclick="newElement()" class="addBtn">Add</span>
-</div>
-
-<ul id="myUL">
-</ul>
-
-
-<script>
-  // Create a "close" button and append it to each list item
-var myNodelist = document.getElementsByTagName("LI");
-var i;
-for (i = 0; i < myNodelist.length; i++) {
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
-}
-
-// Click on a close button to hide the current list item
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  }
-}
-
-// Add a "checked" symbol when clicking on a list item
-var list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('checked');
-  }
-}, false);
-
-// Create a new list item when clicking on the "Add" button
-function newElement() {
-  var li = document.createElement("li");
-  var inputValue = document.getElementById("myInput").value;
-  var t = document.createTextNode(inputValue);
-  li.appendChild(t);
-  if (inputValue === '') {
-    alert("You must write something!");
-  } else {
-    document.getElementById("myUL").appendChild(li);
-  }
-  document.getElementById("myInput").value = "";
-
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  li.appendChild(span);
-
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-      var div = this.parentElement;
-      div.style.display = "none";
-    }
-  }
-}
-</script>
-
-<!-- Make an ultimate list here out of ms/ss variables. -->
