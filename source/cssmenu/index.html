@@ -13,47 +13,50 @@
 </head>
 
 <body>
-  <span>Choose Type of Poll Query</span>
-  <select id="selectionDropDown" onchange="ShowHideDiv()">
-    <option disabled selected value> -- select an option -- </option>
-    <option value="M">Multiple Answers</option>
-    <option value="S">Single Answer</option>
-  </select>
-  <hr/>
-  <div id="multiSelect" style="display: none">
-    <form id="MSForm">
-      GMail
-      <input type="checkbox" name="gender">
-      <br> HotMail
-      <input type="checkbox" name="gender">
-      <br> Other Email Service
-      <input type="checkbox" name="gender" onclick="myFunction()">
-    </form>
-    <button onclick="MSButtonHandler()">Done</button>
+  <div class="ui container segment main-container">
+      <span>Choose Type of Poll Query</span>
+      <select id="selectionDropDown" onchange="ShowHideDiv()">
+        <option disabled selected value> -- select an option -- </option>
+        <option value="M">Multiple Answers</option>
+        <option value="S">Single Answer</option>
+      </select>
+      <hr/>
+      <div id="multiSelect" style="display: none">
+        <form id="MSForm">
+          GMail
+          <input type="checkbox" name="gender">
+          <br> HotMail
+          <input type="checkbox" name="gender">
+          <br> Other Email Service
+          <input type="checkbox" name="gender" onclick="myFunction()">
+        </form>
+        <button onclick="MSButtonHandler()">Done</button>
+      </div>
+    
+      <div id="singleSelect" style="display: none">
+        <form id="SSForm">
+          Generate Your Single Option Question :
+          <br>
+          <input type="text" id="gender" value="Query Title">
+        </form>
+        <button onclick="SSButtonHandler()">Done</button>
+      </div>
+    
+      <div id="everything">
+        <form id="everythingForm">
+        </form>
+      </div>
+    
+      <div id="radioEditor" class="header" style="display: none">
+        <h3 id="radioTitle">Title ?</h3>
+        <input type="text" id="myInput" placeholder="Title...">
+        <span onclick="newElement()" class="addBtn">Add</span>
+      </div>
+    
+      <ul id="myUL">
+      </ul>
   </div>
-
-  <div id="singleSelect" style="display: none">
-    <form id="SSForm">
-      Generate Your Single Option Question :
-      <br>
-      <input type="text" id="gender" value="Query Title">
-    </form>
-    <button onclick="SSButtonHandler()">Done</button>
-  </div>
-
-  <div id="everything">
-    <form id="everythingForm">
-    </form>
-  </div>
-
-  <div id="radioEditor" class="header" style="display: none">
-    <h3 id="radioTitle">Title ?</h3>
-    <input type="text" id="myInput" placeholder="Title...">
-    <span onclick="newElement()" class="addBtn">Add</span>
-  </div>
-
-  <ul id="myUL">
-  </ul>
+  
 
 </body>
 <html>
