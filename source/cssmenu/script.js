@@ -21,6 +21,7 @@ function SSButtonHandler() {
   var singleSelect = document.getElementById("singleSelect").value;
   document.getElementById("radioTitle").innerText = document.getElementById('gender').value;
   console.log("value is " + document.getElementById('gender').value);
+  document.getElementById("myUL").innerHTML = '';
   document.getElementById("radioEditor").style.display = "block"
   console.log("Done Selected for SS");
   UpdateEverything();
@@ -103,7 +104,6 @@ var myNodelist = document.getElementsByTagName("LI");
   }
 
 function finishRadio() {
-
     var parent = document.getElementById("myUL");
     var lis = parent.getElementsByTagName("li");
     radioQuery = {
@@ -112,12 +112,15 @@ function finishRadio() {
           "options" : []
     };
     
-    for(i =0 ;i<lis.length; i++)
+    for(i =0 ;i<lis.length; i++) 
     {
-      radioQuery.options.push(lis[i].innerText.slice(0, -1));
+      console.log(lis[i])
+      if(lis[i].style.display != 'none')
+        radioQuery.options.push(lis[i].innerText.slice(0, -1));
     }
     everything.push(radioQuery);
-    loadEverything();
+    //loadEverything();
+    loadLatest();
     console.log(everything);
   }
 
@@ -149,6 +152,34 @@ function loadEverything(){
       }
     }
 }
+
+function loadLatest(){
+  var allView = document.getElementById("everything");
+//     allView.style.display = "block";
+
+    for(var i=0;i<everything.length;i++)
+    {
+        var i = everything.length - 1;
+        var div = document.createElement('div');
+        var h4=document.createElement('h4');
+        h4.innerText = everything[i].title;
+        div.appendChild(h4);
+        for(var j = 0 ; j< everything[i].options.length; j++)
+        {
+          var labelname = everything[i].options[j];
+          var value = i+ "_" + j;
+          var ih = `<input type="radio" value="${value}"> <label>${labelname}</label><br>`;
+          var create = `<input type="radio" value="${value}">`;
+          var create1 = `<label>${labelname}</label><br>`;
+          var d = document.createElement('div');
+          d.innerHTML = ih;
+          div.appendChild(d)
+        }
+        allView.append(div);
+        allView.style.display = "block";
+      }
+}
+
 
 function createRadioElement(name, checked) {
     var radioHtml = '<input type="radio" name="' + name + '"';
