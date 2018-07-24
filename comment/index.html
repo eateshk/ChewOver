@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Comment</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
+  <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+  <div class="ui threaded comments">
+    <h3 class="ui dividing header">Comments</h3>
+    <div class="comment">
+      <a class="avatar">
+        <img src="../asset/image/avatar.png">
+      </a>
+      <div class="content">
+        <a class="author">Elliot Fu</a>
+        <div class="metadata">
+          <span class="date">Yesterday at 12:30AM</span>
+        </div>
+        <div class="text">
+          <p>This has been very useful for my research. Thanks as well!</p>
+        </div>
+        <div class="actions">
+          <a class="reply"  data-value = "yes" onclick="toggleCommentBox(this)">Reply</a>
+        </div>
+      </div>
+      <div class="comments">
+        <div class="comment">
+          <a class="avatar">
+            <img src="../asset/image/avatar.png">
+          </a>
+          <div class="content">
+            <a class="author">Jenny Hess</a>
+            <div class="metadata">
+              <span class="date">Just now</span>
+            </div>
+            <div class="text">
+              Elliot you are always so right :)
+            </div>
+            <div class="actions">
+              <a class="reply" data-value = "yes" onclick="toggleCommentBox(this)">Reply</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="comment">
+        <a class="avatar">
+          <img src="../asset/image/avatar.png">
+        </a>
+        <div class="content">
+          <a class="author">Joe Henderson</a>
+          <div class="metadata">
+            <span class="date">5 days ago</span>
+          </div>
+          <div class="text">
+            Dude, this is awesome. Thanks so much
+          </div>
+          <div class="actions">
+            <a class="reply"  data-value = "yes" onclick="toggleCommentBox(this)">Reply</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="" async defer></script>
+</body>
+
+</html>
