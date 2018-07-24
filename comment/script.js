@@ -3,7 +3,7 @@ var currentUser = {
     name: "jayasurya the great",
 }
 
-var form = '<form class="ui reply form"> <div class="field"> <textarea></textarea> </div> <div class="ui blue labeled submit icon button" onclick=addComment(this)> <i class="icon edit"></i> Add Reply </div> </form>';
+var form = '<form class="ui reply form" action="#"> <div class="field"> <textarea></textarea> </div> <div class="ui blue labeled submit icon button" onclick=addComment(this)> <i class="icon edit"></i> Add Reply </div> </form>';
 function toggleCommentBox(e){
     console.log("clicked"+$(e).attr('id'));
     var val = $(e).attr('data-value');
@@ -20,9 +20,10 @@ function toggleCommentBox(e){
 
 function addComment(e){
     var parent = $(e).parent().parent();
+    var textVal =  $(e).parent().find(".field textarea").val();
+    console.log("textbox text " + textVal);
     $(e).parent().remove();
-    console.log("textbox text " + $(e).parent().val());
-    parent.append(GetComment($(e).parent().siblings("textarea").text()))
+    parent.append(GetComment(textVal));
 }
 
 function GetComment(text){
