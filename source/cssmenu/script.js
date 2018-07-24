@@ -23,15 +23,6 @@ function SSButtonHandler() {
   console.log("value is " + document.getElementById('gender').value);
   document.getElementById("radioEditor").style.display = "block"
   console.log("Done Selected for SS");
-  var form_elements = document.getElementById('SSForm').elements;
-  var selectedGender = form_elements['gender'].value;
-  console.log(form_elements['gender'][0]);
-  everything.push(
-    {
-      "type": "singleSelect",
-      "value": form_elements['gender'].value,
-      "values": form_elements['gender']
-    });
   UpdateEverything();
 };
 
@@ -115,6 +106,7 @@ function finishRadio() {
     var parent = document.getElementById("myUL");
     var lis = parent.getElementsByTagName("li");
     radioQuery = {
+          "type" : "radio",
           "title" : document.getElementById("radioTitle").innerText,
           "options" : []
     };
@@ -123,7 +115,30 @@ function finishRadio() {
     {
       radioQuery.options.push(lis[i].innerText.slice(0, -1));
     }
-    
     everything.push(radioQuery);
-    console.log(radioQuery);
+    loadEverything();
+    console.log(everything);
   }
+
+function loadEverything(){
+  var allView = document.getElementById("everything");
+//     allView.style.display = "block";
+
+    for(var i=0;i<everything.length;i++)
+    {
+      if(everything[i].type == "radio")
+      {
+        var div = document.createElement('div');
+        div.innerHTML = everything[i].title;
+        for(var j = 0 ; j< everything[i].options.length; j++)
+        {
+          var labelname = everything[i].options[j];
+          var value = i+ "_" + j;
+          var create = $('<input type="radio" value="'+value+'"><label>'+labelname+'</label><br>');
+          div.append(create);
+        }
+        allView.append(div);
+        allView.style.display = "block";
+      }
+    }
+}
