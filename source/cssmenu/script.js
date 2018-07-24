@@ -1,4 +1,25 @@
-var everything = [];
+var everything = [
+  {
+    "type": "radio",
+    "title": "How is your doggy doing now ?",
+    "options": [
+      "Doing Well, In recovery phase.",
+      "Knocking!",
+      "Need to visit vet ;(",
+      "Don't know"
+    ]
+  },
+  {},
+  {
+    "type": "radio",
+    "title": "What's your gender ?",
+    "options": [
+      "Male",
+      "Female",
+      "Other"
+    ]
+  },
+];
 
 function ShowHideDiv() {
   var multiSelect = document.getElementById("multiSelect");
@@ -7,6 +28,7 @@ function ShowHideDiv() {
     console.log("singleSelect found");
     singleSelect.style.display = "block";
     multiSelect.style.display = "none";
+    loadEverything();
   }
   else if (selectionDropDown.value == "S") {
     console.log("multiSelect found");
@@ -126,8 +148,6 @@ function finishRadio() {
 
 function loadEverything(){
   var allView = document.getElementById("everything");
-//     allView.style.display = "block";
-
     for(var i=0;i<everything.length;i++)
     {
       if(everything[i].type == "radio")
@@ -150,6 +170,13 @@ function loadEverything(){
         allView.append(div);
         allView.style.display = "block";
       }
+      else{
+        var div = document.createElement('div');
+        var h4=document.createElement('h4');
+        h4.innerText = "This is a new type of component coming soon";
+        div.appendChild(h4);
+        allView.append(div);
+      }
     }
 }
 
@@ -159,6 +186,7 @@ function loadLatest(){
 
     for(var i=0;i<everything.length;i++)
     {
+      if(everything[i].type == "radio"){
         var i = everything.length - 1;
         var div = document.createElement('div');
         var h4=document.createElement('h4');
@@ -178,6 +206,14 @@ function loadLatest(){
         allView.append(div);
         allView.style.display = "block";
       }
+      else{
+        var div = document.createElement('div');
+        var h4=document.createElement('h4');
+        h4.innerText = "This is a new type of component coming soon";
+        div.appendChild(h4);
+        allView.append(div);
+      }
+    }
 }
 
 
