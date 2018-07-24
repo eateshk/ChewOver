@@ -53,8 +53,11 @@
       <div id="radioEditor" class="header" style="display: none">
         <h3 id="radioTitle">Title ?</h3>
         <input type="text" id="myInput" placeholder="Title...">
-        <span onclick="newElement()" class="addBtn">Add</span><br>
-        <span onclick="finishRadio()" class="addBtn">Finish Creating Question</span>
+         <div class="ui buttons">
+            <button onclick="newElement()" class="ui positive button addBtn">Add option</button>
+            <div class="or"></div>
+            <button onclick = "finishRadio()" class="ui button">Finish creating question</button>
+          </div>
       </div>
     
       <ul id="myUL">
