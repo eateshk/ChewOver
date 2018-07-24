@@ -7,19 +7,19 @@ var currentUser = {
 var state = [
 	{
 		id: 'c1',
-		avatar: '../asset/image/avatar.png',
+		avatar: '../../asset/image/avatar.png',
 		author: 'author',
 		metadata: 'metdata',
 		text: 'sometext',
 		children: [{
 			id: 'c2',
-			avatar: '../asset/image/avatar.png',
+			avatar: '../../asset/image/avatar.png',
 			author: 'child2 author',
 			metadata: 'metdata',
 			text: 'sometext',
 			children: [{
         id: 'c2.1',
-        avatar: '../asset/image/avatar.png',
+        avatar: '../../asset/image/avatar.png',
         author: 'child2.1 author',
         metadata: 'metdata',
         text: 'sometext',
@@ -28,7 +28,7 @@ var state = [
 		},
 		{
 			id: 'c5',
-			avatar: '../asset/image/avatar.png',
+			avatar: '../../asset/image/avatar.png',
 			author: 'child5 added',
 			metadata: 'metdata',
 			text: 'sometext',
@@ -38,7 +38,7 @@ var state = [
 	},
 	{
 		id: 'c4',
-		avatar: '../asset/image/avatar.png',
+		avatar: '../../asset/image/avatar.png',
 		author: 'child 4 author',
 		metadata: 'metdata',
 		text: 'sometext',
