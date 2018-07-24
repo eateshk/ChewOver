@@ -142,3 +142,16 @@ function loadEverything(){
       }
     }
 }
+
+function createRadioElement(name, checked) {
+    var radioHtml = '<input type="radio" name="' + name + '"';
+    if ( checked ) {
+        radioHtml += ' checked="checked"';
+    }
+    radioHtml += '/>';
+
+    var radioFragment = document.createElement('div');
+    radioFragment.innerHTML = radioHtml;
+
+    return radioFragment.firstChild;
+}
