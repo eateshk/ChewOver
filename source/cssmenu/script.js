@@ -58,6 +58,7 @@ function showSearchedItems(){
   var searchString = document.getElementById("searchForumsText").value;
   console.log(searchString);
   document.getElementById("createPollSection").style.display = "none";
+  document.getElementById("createThread").style.display = "none";
   document.getElementById("searchForums").style.display = "block";
   loadFiltered(searchString);
 }
@@ -65,8 +66,16 @@ function showSearchedItems(){
 
 function showForumSearch(){
   document.getElementById("createPollSection").style.display = "none";
+  document.getElementById("createThread").style.display = "none";
   document.getElementById("searchForums").style.display = "block";
 }
+
+function showCreateThread(){
+    document.getElementById("createPollSection").style.display = "none";
+  document.getElementById("searchForums").style.display = "none";
+  document.getElementById("createThread").style.display = "block";
+}
+
 
 function showCreatePolls(){
   console.log("showcreatepolls called");
