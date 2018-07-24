@@ -1,4 +1,47 @@
-var everything = [];
+var everything = [
+  {
+    "type": "radio",
+    "title": "How is your doggy doing now ?",
+    "options": [
+      "Doing Well, In recovery phase.",
+      "Knocking!",
+      "Need to visit vet ;(",
+      "Don't know"
+    ]
+  },
+  {},
+  {
+    "type": "radio",
+    "title": "What's your gender ?",
+    "options": [
+      "Male",
+      "Female",
+      "Other"
+    ]
+  },
+];
+
+
+function showSearchedItems(){
+  var searchString = document.getElementById("searchForumsText").value;
+  console.log(searchString);
+  document.getElementById("createPollSection").style.display = "none";
+  document.getElementById("searchForums").style.display = "block";
+  loadFiltered(searchString);
+}
+
+
+function showForumSearch(){
+  document.getElementById("createPollSection").style.display = "none";
+  document.getElementById("searchForums").style.display = "block";
+}
+
+function showCreatePolls(){
+  console.log("showcreatepolls called");
+  document.getElementById("searchForums").style.display = "none";
+  document.getElementById("createPollSection").style.display = "block";
+  // todo : make others none when they're added.
+}
 
 function ShowHideDiv() {
   var multiSelect = document.getElementById("multiSelect");
@@ -7,6 +50,7 @@ function ShowHideDiv() {
     console.log("singleSelect found");
     singleSelect.style.display = "block";
     multiSelect.style.display = "none";
+    loadEverything();
   }
   else if (selectionDropDown.value == "S") {
     console.log("multiSelect found");
@@ -126,8 +170,6 @@ function finishRadio() {
 
 function loadEverything(){
   var allView = document.getElementById("everything");
-//     allView.style.display = "block";
-
     for(var i=0;i<everything.length;i++)
     {
       if(everything[i].type == "radio")
@@ -150,15 +192,21 @@ function loadEverything(){
         allView.append(div);
         allView.style.display = "block";
       }
+      else{
+        var div = document.createElement('div');
+        var h4=document.createElement('h4');
+        h4.innerText = "This is a new type of component coming soon";
+        div.appendChild(h4);
+        allView.append(div);
+      }
     }
 }
 
 function loadLatest(){
   var allView = document.getElementById("everything");
-//     allView.style.display = "block";
-
     for(var i=0;i<everything.length;i++)
     {
+      if(everything[i].type == "radio"){
         var i = everything.length - 1;
         var div = document.createElement('div');
         var h4=document.createElement('h4');
@@ -178,8 +226,55 @@ function loadLatest(){
         allView.append(div);
         allView.style.display = "block";
       }
+      else{
+        var div = document.createElement('div');
+        var h4=document.createElement('h4');
+        h4.innerText = "This is a new type of component coming soon";
+        div.appendChild(h4);
+        allView.append(div);
+      }
+    }
 }
 
+function loadFiltered(searchString){
+  var filtered = everything;
+  var searchList = searchString.split(",").map(item => item.trim());
+  console.log("searchlist is " + searchList);
+  var allView = document.getElementById("everything");
+  allView.innerHTML = '';
+    for(var i=0;i<filtered.length;i++)
+    {
+      if(searchList.length != 0 && !isKeywordPresent(searchList, filtered[i]))
+        continue;
+      if(filtered[i].type == "radio")
+      {
+        var div = document.createElement('div');
+        var h4=document.createElement('h4');
+        h4.innerText = filtered[i].title;
+        div.appendChild(h4);
+        for(var j = 0 ; j< filtered[i].options.length; j++)
+        {
+          var labelname = filtered[i].options[j];
+          var value = i+ "_" + j;
+          var ih = `<input type="radio" value="${value}"> <label>${labelname}</label><br>`;
+          var create = `<input type="radio" value="${value}">`;
+          var create1 = `<label>${labelname}</label><br>`;
+          var d = document.createElement('div');
+          d.innerHTML = ih;
+          div.appendChild(d)
+        }
+        allView.append(div);
+        allView.style.display = "block";
+      }
+      else{
+        var div = document.createElement('div');
+        var h4=document.createElement('h4');
+        h4.innerText = "This is a new type of component coming soon";
+        div.appendChild(h4);
+        allView.append(div);
+      }
+    }
+}
 
 function createRadioElement(name, checked) {
     var radioHtml = '<input type="radio" name="' + name + '"';
@@ -193,3 +288,17 @@ function createRadioElement(name, checked) {
 
     return radioFragment.firstChild;
 }
+
+function isKeywordPresent(keywords, o){
+  var s = "";
+  if(o.type == "radio")
+    s = o.title;
+  else if(o.type == "comments")
+    s = o.text
+  for(var i=0; i<keywords.length; i++){
+    if(s!=undefined && s.includes(keywords[i]))
+      return true;
+  }
+  return false;
+}
+

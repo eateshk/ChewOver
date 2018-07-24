@@ -11,18 +11,33 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
   <script src="script.js"></script>
-  <title>CSS MenuMaker</title>
+  <title>FAAS</title>
 </head>
 
 <body>
   <div class="ui container segment main-container">
+    <button onclick="showForumSearch()">Search Forums</button>
+    <button onclick="showCreatePolls()">Create Survey Poll</button>
+    <button onclick="showCreatePolls()">Create Discussion Thread</button>
+
+    <div id="searchForums">
+      <div class="ui right aligned category search">
+      <div class="ui icon input">
+      <input id="searchForumsText" class="prompt" type="text" placeholder="Search Forums ..">
+      <i class="search icon" onclick="showSearchedItems"></i>
+      </div>
+      <button onclick="showSearchedItems()">Go</button>
+      </div>
+    </div>
+
+    <div id="createPollSection" style="display: none">
       <div class="ui container center poll-choose">
           <span>Choose Type of Poll Query</span>
-        <select id="selectionDropDown" class = "ui dropdown font-style" onchange="ShowHideDiv()">
-          <option disabled selected value> select your option here </option>
-          <option value="M">Multiple Answers</option>
-          <option value="S">Single Answer</option>
-        </select>
+          <select id="selectionDropDown" class = "ui dropdown font-style" onchange="ShowHideDiv()">
+            <option disabled selected value> select your option here </option>
+            <option value="M">Single Answers</option>
+            <option value="S">Multiple Answer</option>
+          </select>
       </div>
       <h4 class="ui horizontal divider header">
           <i class="bar chart icon"></i>
@@ -61,12 +76,18 @@
     
       <ul  id="myUL">
       </ul>
-      
+      </div>
       <div class="ui container" id="everything">
-        <h3>Poll Queries Below</h3>
+        <h3>Discussions/Poll Below</h3>
         <form id="everythingForm">
         </form>
       </div>
+      <script type="text/javascript">
+          singleSelect.style.display = "block";
+          multiSelect.style.display = "none";
+          loadEverything();
+      </script>
+</div>
   </div>
 
   </ul>
