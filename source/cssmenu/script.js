@@ -88,9 +88,9 @@ var myNodelist = document.getElementsByTagName("LI");
     }
     document.getElementById("myInput").value = "";
 
-    var span = document.createElement("SPAN");
-    var txt = document.createTextNode("\u00D7");
-    span.className = "close";
+    var span = document.createElement("i");
+    var txt = document.createTextNode("");
+    span.className = "close times icon";
     span.appendChild(txt);
     li.appendChild(span);
 
