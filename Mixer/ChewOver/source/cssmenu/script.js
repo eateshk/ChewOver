@@ -244,7 +244,7 @@ function loadEverything() {
       var ih = GenerateCommentFromState(everything[i], "#comment-start-test-random");
       console.log("Ih is : ");
       console.log(ih);
-      d.innerHTML = `<h3 class='ui block header black'>${everything[i].title}</h3>` + ih;
+      d.innerHTML = `<h4 class='ui block header black'>${everything[i].title}</h4>` + ih;
       console.log("have setup innerhtml");
       d.style.display = "block";
       allView.appendChild(d);
@@ -262,7 +262,7 @@ function loadLatest() {
       var ih = GenerateCommentFromState(everything[lastIndex], "#comment-start-test-random");
       console.log("Ih is : ");
       console.log(ih);
-      d.innerHTML = `<h3 class='ui block header black'>${everything[lastIndex].title}</h3>` + ih;
+      d.innerHTML = `<h4 class='ui block header black'>${everything[lastIndex].title}</h4>` + ih;
       console.log("have setup innerhtml");
       d.style.display = "block";
       allView.appendChild(d);
