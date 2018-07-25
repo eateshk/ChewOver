@@ -12,14 +12,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
   <script src="script.js"></script>
   <script src="../../comment/script.js"></script>
-  <script type="text/javascript" src="../data/everythingfile.json"></script>
   <title>FAAS</title>
-  <script type="text/javascript">
-  function codeAddress() {
-      mainLoad();
-  }
-  window.onload = codeAddress;
-  </script>
 </head>
 
 <body>
@@ -34,7 +27,6 @@
       <div class="ui right aligned category search">
       <div class="ui icon input">
       <input id="searchForumsText" class="search prompt" type="text" placeholder="Search Forums ..">
-      <i class="search icon" onclick="showSearchedItems"></i>
       </div>
       <button class = "ui icon button circular" onclick="showSearchedItems()"><i class="icon search"> </i></button>
       </div>
@@ -83,7 +75,7 @@
             <input type="text" id="gender" value="" placeholder="Your Poll Query Here ..">
           </div>
         </form>
-        <button class="ui button" onclick="SSButtonHandler()">Done</button>
+        <button class="positive ui button" onclick="SSButtonHandler()">Done</button>
       </div>
     
       <div id="radioEditor" class="header" style="display: none">
