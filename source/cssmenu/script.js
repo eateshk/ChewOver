@@ -17,6 +17,7 @@ var everything = [{
   ]
 }, {
   type: "comment",
+  title: "Title goes here",
   id: 'c1',
   avatar: '../asset/image/avatar.png',
   author: 'author',
@@ -232,7 +233,7 @@ function loadEverything() {
       var ih = GenerateCommentFromState(everything[i], "#comment-start-test-random");
       console.log("Ih is : ");
       console.log(ih);
-      d.innerHTML = ih;
+      d.innerHTML = `<h3 class='ui dividing header'>${everything[i].title}</h3>`+ih;
       console.log("have setup innerhtml");
       d.style.display = "block";
       allView.appendChild(d);
