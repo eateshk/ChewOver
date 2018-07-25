@@ -220,18 +220,23 @@ function loadEverything() {
       }
       allView.append(div);
       allView.style.display = "block";
-    } else if (everything[i].type == "comment") {
+    } else if (everything[i].type != "comment") {
       var div = document.createElement('div');
       var h4 = document.createElement('h4');
       h4.innerText = "This is a new type of component coming soon";
       div.appendChild(h4);
       allView.append(div);
-    } else {
-      var s = '<div id="comment-start-test">JeJo</div>';
+    } else if(everything[i].type == "comment"){
       var d = document.createElement('div');
-      d.innerHTML = s;
+      d.className = "ui threaded comments";
+      var ih = GenerateCommentFromState(everything[i], "#comment-start-test-random");
+      console.log("Ih is : ");
+      console.log(ih);
+      d.innerHTML = ih;
+      console.log("have setup innerhtml");
+      d.style.display = "block";
       allView.appendChild(d);
-      GenerateCommentFromState(everything[3], "#comment-start-test");
+      console.log("done it!!");
     }
   }
 }

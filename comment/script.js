@@ -139,7 +139,8 @@ function init(parentSelector, state) {
 
     $(parentSelector).parent().append(element);
   })
-	console.log("retunred " + a);
+	console.log("retunred " + a[0]);
+	return a[0];
 }
 // uber function
 function GenerateCommentFromState(state, parent){
@@ -148,9 +149,8 @@ function GenerateCommentFromState(state, parent){
 	var random = Math.floor((Math.random() * 10000) + 1);
 	var div = $(`<div class="ui threaded comments"><h3 id=${random} class="ui dividing header">Comments</h3>`);
 	$(parent).append(div);
-	init("#"+random, newstate);
 	console.log("inside genneate functoin");
-	console.log(div);
+	return init("#"+random, newstate);
 }
 function deszstate(statecopy){
   var html2 = [];
