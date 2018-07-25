@@ -1,6 +1,6 @@
 var everything = [{
   "type": "radio",
-  "title": "How is your doggy doing now ?",
+  "title": "How is your dog doing now ?",
   "options": [
     "Doing Well, In recovery phase.",
     "Knocking!",
@@ -46,7 +46,12 @@ var everything = [{
     children: []
   }]
 }];
-
+// save as JSON.stringify(everything)
+function mainLoad(){
+  //console.log("data is : ");
+  //var o = JSON.parse(everythingfile);
+  //console.log(o);  
+}
 
 function showSearchedItems() {
   var searchString = document.getElementById("searchForumsText").value;
