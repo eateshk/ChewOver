@@ -36,3 +36,12 @@ li{
   margin-top: 24px;
     margin-bottom: 30px;
 }
+
+.thread-text{
+  text-align: center;
+}
+
+.thread-spacing{
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
