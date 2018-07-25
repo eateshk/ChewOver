@@ -241,7 +241,7 @@ function loadEverything() {
       var ih = GenerateCommentFromState(everything[i], "#comment-start-test-random");
       console.log("Ih is : ");
       console.log(ih);
-      d.innerHTML = `<h3 class='ui dividing header'>${everything[i].title}</h3>` + ih;
+      d.innerHTML = `<h3 class='ui block header blue'>${everything[i].title}</h3>` + ih;
       console.log("have setup innerhtml");
       d.style.display = "block";
       allView.appendChild(d);
@@ -259,7 +259,7 @@ function loadLatest() {
       var ih = GenerateCommentFromState(everything[lastIndex], "#comment-start-test-random");
       console.log("Ih is : ");
       console.log(ih);
-      d.innerHTML = `<h3 class='ui dividing header'>${everything[lastIndex].title}</h3>` + ih;
+      d.innerHTML = `<h3 class='ui block header blue'>${everything[lastIndex].title}</h3>` + ih;
       console.log("have setup innerhtml");
       d.style.display = "block";
       allView.appendChild(d);
@@ -269,7 +269,9 @@ function loadLatest() {
     if (everything[i].type == "radio") {
       var i = everything.length - 1;
       var div = document.createElement('div');
+      div.className = "stylePollQuestion";
       var h4 = document.createElement('h4');
+      h4.className = "ui block header blue";
       h4.innerText = everything[i].title;
       div.appendChild(h4);
       for (var j = 0; j < everything[i].options.length; j++) {
@@ -305,7 +307,9 @@ function loadFiltered(searchString) {
       continue;
     if (filtered[i].type == "radio") {
       var div = document.createElement('div');
+      div.className = "stylePollQuestion";
       var h4 = document.createElement('h4');
+      h4.className = "ui block header blue";
       h4.innerText = filtered[i].title;
       div.appendChild(h4);
       for (var j = 0; j < filtered[i].options.length; j++) {
