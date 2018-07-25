@@ -1,25 +1,25 @@
 /* VARIABLE DECLARATIONS
 */
 var currentUser = {
-	profilePic: "../../asset/image/avatar.png",
+	profilePic: "../../../asset/image/avatar.png",
 	name: "jayasurya the great",
 }
 var state = [
 	{
 		id: 'c1',
-		avatar: '../../asset/image/avatar.png',
+		avatar: '../../../asset/image/avatar.png',
 		author: 'author',
 		metadata: 'metdata',
 		text: 'sometext',
 		children: [{
 			id: 'c2',
-			avatar: '../../asset/image/avatar.png',
+			avatar: '../../../asset/image/avatar.png',
 			author: 'child2 author',
 			metadata: 'metdata',
 			text: 'sometext',
 			children: [{
         id: 'c2.1',
-        avatar: '../../asset/image/avatar.png',
+        avatar: '../../../asset/image/avatar.png',
         author: 'child2.1 author',
         metadata: 'metdata',
         text: 'sometext',
@@ -28,7 +28,7 @@ var state = [
 		},
 		{
 			id: 'c5',
-			avatar: '../../asset/image/avatar.png',
+			avatar: '../../../asset/image/avatar.png',
 			author: 'child5 added',
 			metadata: 'metdata',
 			text: 'sometext',
@@ -38,7 +38,7 @@ var state = [
 	},
 	{
 		id: 'c4',
-		avatar: '../../asset/image/avatar.png',
+		avatar: '../../../asset/image/avatar.png',
 		author: 'child 4 author',
 		metadata: 'metdata',
 		text: 'sometext',
@@ -83,7 +83,7 @@ function addComment(e) {
 function GetCommentObj(textval){
   var obj = {};
   obj.id = Math.floor((Math.random() * 10000) + 1);
-  obj.avatar = "../../asset/image/avatar.png";
+  obj.avatar = "../../../asset/image/avatar.png";
   obj.author = 'author';
 	obj.metadata = 'metdata';
 	obj.text = textval;
@@ -200,7 +200,7 @@ function deszstate(statecopy){
 function foo() {
 	var objTopush = {
 		id: 'c5',
-		avatar: '../../asset/image/avatar.png',
+		avatar: '../../../asset/image/avatar.png',
 		author: 'newly added',
 		metadata: 'metdata',
 		text: 'sometext',
