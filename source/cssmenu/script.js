@@ -245,6 +245,19 @@ function loadEverything() {
 
 function loadLatest() {
   var allView = document.getElementById("everything");
+  var lastIndex = everything.length-1;
+  if(everything[lastIndex].type == "comment"){
+    var d = document.createElement('div');
+      d.className = "ui threaded comments";
+      var ih = GenerateCommentFromState(everything[lastIndex], "#comment-start-test-random");
+      console.log("Ih is : ");
+      console.log(ih);
+      d.innerHTML = `<h3 class='ui dividing header'>${everything[lastIndex].title}</h3>` + ih;
+      console.log("have setup innerhtml");
+      d.style.display = "block";
+      allView.appendChild(d);
+    return;
+  }
   for (var i = 0; i < everything.length; i++) {
     if (everything[i].type == "radio") {
       var i = everything.length - 1;
@@ -342,8 +355,6 @@ function StartThread() {
   var threadCommentContent = $('#thread-comment-content').val();
   console.log("thread title is " + threadTitle + "thread commnet content is " + threadCommentContent);
   // creating an object to store in eveyrthing vairable
-
-  children:
   var threadObj = {
     type: "comment",
     title: threadTitle,
@@ -356,5 +367,5 @@ function StartThread() {
   }
 
   everything.push(threadObj);
-
+  loadLatest();
 }

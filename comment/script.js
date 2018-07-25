@@ -133,7 +133,7 @@ function UpdateState(id, obj, objToAdd) {
 function init(parentSelector, state) {
   //var a = GetCommentFromState(parentSelector, state, false);
   // first clear the comments
-  $('.comment').remove();
+  //$('.comment').remove();
   var a = foobar(state);
   a.forEach(function(element){
 
