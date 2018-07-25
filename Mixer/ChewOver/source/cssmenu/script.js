@@ -1,40 +1,43 @@
-var everything = [{
+var everything = [
+  {
   "type": "radio",
-  "title": "How is your dog doing now ?",
+  "title": "Which game you like to see more ?",
   "options": [
-    "Doing Well, In recovery phase.",
-    "Knocking!",
-    "Need to visit vet ;(",
-    "Don't know"
+    "Fortnite",
+    "League of Legends",
+    "Overwatch",
+    "Hearthstone"
   ]
-}, {}, {
+},
+{
   "type": "radio",
-  "title": "What's your gender ?",
+  "title": "Mixer release 25/07/2018 - Streamers how are you liking our all new Devcenter Analytics Page ?",
   "options": [
-    "Male",
-    "Female",
-    "Other"
+    "Amazing, bring more of it !",
+    "Not sure, may take time to get used to.",
+    "Do'nt like it",
+    "No Comments"
   ]
-}, {
+  }, {
   type: "comment",
-  title: "Title goes here",
+  title: "CounterStrike @ E-Olympiad starting 02:30am PDT !",
   id: 'c1',
   avatar: '../asset/image/avatar.png',
-  author: 'Deepak',
+  author: 'Jayasurya aka JJ',
   metadata: 'metdata',
-  text: 'I am gonna tell a joke',
+  text: 'yay !!',
   children: [{
     id: 'c2',
     avatar: '../asset/image/avatar.png',
-    author: 'Deepak',
+    author: 'Anu',
     metadata: 'metdata',
-    text: 'a joke',
+    text: 'I\'m feeling crazy !!',
     children: [{
       id: 'c2.1',
       avatar: '../asset/image/avatar.png',
       author: 'Eatesh',
       metadata: 'metdata',
-      text: 'haha',
+      text: '30 more mins, can anyone share the link to the streaming ?',
       children: []
     }]
   }, {
@@ -42,7 +45,7 @@ var everything = [{
     avatar: '../asset/image/avatar.png',
     author: 'Venkata',
     metadata: 'metdata',
-    text: 'I like this forum!',
+    text: 'Mixer - thanks for building this amazing forum. here\'s the link - http://mixer.com/boomboom',
     children: []
   }]
 }];
