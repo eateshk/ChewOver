@@ -32,9 +32,14 @@
     </div>
 
     <div id="createThread" style="display: none">
-      JJ
-      <div class="ui threaded comments">
-          <h3 id="comment-start" class="ui dividing header">Comments</h3>
+      <div class="ui form">
+        <div class="field">
+          <label>Title of the thread</label>
+          <input id="thread-title" type="text">
+          <label>Comment</label>
+          <input  id="thread-comment-content" type="text">
+          <button class="ui green button" onclick="StartThread()">Start a thread</button>
+        </div>
       </div>
     </div>
 

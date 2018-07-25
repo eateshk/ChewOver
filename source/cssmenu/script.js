@@ -73,6 +73,7 @@ function showCreateThread() {
 
 function showCreatePolls() {
   console.log("showcreatepolls called");
+  document.getElementById("createThread").style.display = "none";
   document.getElementById("searchForums").style.display = "none";
   document.getElementById("createPollSection").style.display = "block";
   // todo : make others none when they're added.
@@ -107,7 +108,7 @@ function SSButtonHandler() {
 
 function UpdateEverything() {
   console.log("Updating everything");
-  everything.forEach(function(element) {
+  everything.forEach(function (element) {
     if (element.type == "singleSelect") {
       console.log("single select found, updating !");
       /*
@@ -139,7 +140,7 @@ for (i = 0; i < myNodelist.length; i++) {
 var close = document.getElementsByClassName("close");
 var i;
 for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
+  close[i].onclick = function () {
     var div = this.parentElement;
     div.style.display = "none";
   }
@@ -147,7 +148,7 @@ for (i = 0; i < close.length; i++) {
 
 // Add a "checked" symbol when clicking on a list item
 var list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
+list.addEventListener('click', function (ev) {
   if (ev.target.tagName === 'LI') {
     ev.target.classList.toggle('checked');
   }
@@ -174,7 +175,7 @@ function newElement() {
   li.appendChild(span);
 
   for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
+    close[i].onclick = function () {
       var div = this.parentElement;
       div.style.display = "none";
     }
@@ -227,13 +228,13 @@ function loadEverything() {
       h4.innerText = "This is a new type of component coming soon";
       div.appendChild(h4);
       allView.append(div);
-    } else if(everything[i].type == "comment"){
+    } else if (everything[i].type == "comment") {
       var d = document.createElement('div');
       d.className = "ui threaded comments";
       var ih = GenerateCommentFromState(everything[i], "#comment-start-test-random");
       console.log("Ih is : ");
       console.log(ih);
-      d.innerHTML = `<h3 class='ui dividing header'>${everything[i].title}</h3>`+ih;
+      d.innerHTML = `<h3 class='ui dividing header'>${everything[i].title}</h3>` + ih;
       console.log("have setup innerhtml");
       d.style.display = "block";
       allView.appendChild(d);
@@ -333,4 +334,27 @@ function isKeywordPresent(keywords, o) {
       return true;
   }
   return false;
+}
+
+function StartThread() {
+  console.log("Going to start a thread and storing in everything variable");
+  var threadTitle = $('#thread-title').val();
+  var threadCommentContent = $('#thread-comment-content').val();
+  console.log("thread title is " + threadTitle + "thread commnet content is " + threadCommentContent);
+  // creating an object to store in eveyrthing vairable
+
+  children:
+  var threadObj = {
+    type: "comment",
+    title: threadTitle,
+    id: Math.floor(Math.random()*1000 +1),
+    avatar: '../asset/image/avatar.png',
+    author: 'author',
+    metadata: 'Just now',
+    text: threadCommentContent,
+    children:[]
+  }
+
+  everything.push(threadObj);
+
 }
