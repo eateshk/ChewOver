@@ -371,7 +371,7 @@ function StartThread() {
     title: threadTitle,
     id: Math.floor(Math.random()*1000 +1),
     avatar: '../asset/image/avatar.png',
-    author: 'author',
+    author: 'Jayasurya the great',
     metadata: 'Just now',
     text: threadCommentContent,
     children:[]
