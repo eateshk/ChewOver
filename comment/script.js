@@ -130,19 +130,28 @@ function UpdateState(id, obj, objToAdd) {
 	return obj;
 }
 
-function init(parentSelector) {
+function init(parentSelector, state) {
   //var a = GetCommentFromState(parentSelector, state, false);
   // first clear the comments
   $('.comment').remove();
-  var a = foobar();
+  var a = foobar(state);
   a.forEach(function(element){
 
-    $('#comment-start').parent().append(element);
+    $(parentSelector).parent().append(element);
   })
 	console.log("retunred " + a);
 }
-
-
+// uber function
+function GenerateCommentFromState(state, parent){
+  var newstate = [];
+	newstate.push(state);
+	var random = Math.floor((Math.random() * 10000) + 1);
+	var div = $(`<div class="ui threaded comments"><h3 id=${random} class="ui dividing header">Comments</h3>`);
+	$(parent).append(div);
+	init("#"+random, newstate);
+	console.log("inside genneate functoin");
+	console.log(div);
+}
 function deszstate(statecopy){
   var html2 = [];
   statecopy.forEach(function(element){
@@ -203,9 +212,10 @@ function foo() {
 	state = newstate;
 }
 
-function foobar(){
-  console.log("v2 desz");
-  var desz2 = deszstate(state);
+function foobar(state1){
+	console.log("v2 desz");
+	console.log(state1);
+  var desz2 = deszstate(state1);
   console.log(desz2);
   return desz2;
 }
