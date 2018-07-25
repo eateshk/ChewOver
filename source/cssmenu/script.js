@@ -207,7 +207,9 @@ function loadEverything() {
   for (var i = 0; i < everything.length; i++) {
     if (everything[i].type == "radio") {
       var div = document.createElement('div');
+      div.className = "stylePollQuestion";
       var h4 = document.createElement('h4');
+      h4.className = "ui block header blue";
       h4.innerText = everything[i].title;
       div.appendChild(h4);
       for (var j = 0; j < everything[i].options.length; j++) {
