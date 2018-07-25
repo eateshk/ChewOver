@@ -227,10 +227,11 @@ function loadEverything() {
       div.appendChild(h4);
       allView.append(div);
     } else {
-      var s = '<div class="ui threaded comments"><h3 id="comment-start" class="ui dividing header">Comments</h3></div>';
+      var s = '<div id="comment-start-test">JeJo</div>';
       var d = document.createElement('div');
       d.innerHTML = s;
       allView.appendChild(d);
+      GenerateCommentFromState(everything[3], "#comment-start-test");
     }
   }
 }
