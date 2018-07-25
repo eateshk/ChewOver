@@ -1,48 +1,47 @@
 var everything = [{
   "type": "radio",
-  "title": "How is your dog doing now ?",
+  "title": "What do you want us to improve ?",
   "options": [
-    "Doing Well, In recovery phase.",
-    "Knocking!",
-    "Need to visit vet ;(",
-    "Don't know"
+    "Increase the collections",
+    "Faster delivery",
+    "Make it more affordable",
+    "Customer care"
   ]
 }, {}, {
   "type": "radio",
-  "title": "What's your gender ?",
+  "title": "What do you want us to add to our inventory ?",
   "options": [
-    "Male",
-    "Female",
-    "Other"
+    "Stickers",
+    "Cofee cups"
   ]
 }, {
   type: "comment",
-  title: "Title goes here",
+  title: "Yet to get my delivery",
   id: 'c1',
   avatar: '../asset/image/avatar.png',
   author: 'Deepak',
-  metadata: 'metdata',
-  text: 'I am gonna tell a joke',
+  metadata: '2 days ago',
+  text: 'I ordered last week, can you guys tell me the status',
   children: [{
     id: 'c2',
     avatar: '../asset/image/avatar.png',
     author: 'Deepak',
-    metadata: 'metdata',
-    text: 'a joke',
+    metadata: '5 hours ago',
+    text: 'I chose fast delivery',
     children: [{
       id: 'c2.1',
       avatar: '../asset/image/avatar.png',
       author: 'Eatesh',
-      metadata: 'metdata',
-      text: 'haha',
+      metadata: 'just now',
+      text: 'Your product is out for delivery :)',
       children: []
     }]
   }, {
     id: 'c5',
     avatar: '../asset/image/avatar.png',
-    author: 'Venkata',
-    metadata: 'metdata',
-    text: 'I like this forum!',
+    author: 'Deepak',
+    metadata: '1 min ago',
+    text: 'Thanks :)',
     children: []
   }]
 }];
