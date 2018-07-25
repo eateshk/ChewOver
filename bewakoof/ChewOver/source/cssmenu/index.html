@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang=''>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css" />
+  <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
+  <script src="script.js"></script>
+  <script src="../../comment/script.js"></script>
+  <title>FAAS</title>
+</head>
+
+<body>
+  <img src="https://images.bewakoof.com/logos/bewakoof-logo-og.png" alt="bewakoof_logo" style="height: 20px; vertical-align: middle; margin-bottom: 5px;">
+  <h2>Welcome to Bewakoof Forums</h2>
+  <div class="ui center container segment main-container">
+      <div class="fluid blue ui buttons">
+          <button class="ui button"  onclick="showForumSearch()">Search Forums</button>
+          <button class="ui button" onclick="showCreatePolls()">Create Survey Poll</button>
+          <button class="ui button" onclick="showCreateThread()">Create Discussion Thread</button>
+    </div> 
+
+    <div id="searchForums">
+      <div class="ui right aligned category search">
+      <div class="ui icon input">
+      <input id="searchForumsText" class="search prompt" type="text" placeholder="Search Forums ..">
+      </div>
+      <button class = "ui icon button circular" onclick="showSearchedItems()"><i class="icon search"> </i></button>
+      </div>
+    </div>
+
+    <div id="createThread" style="display: none">
+      <div class="ui form">
+        <div class="field thread-text">
+          <label class="thread-spacing" style="margin:20px;">Title of the thread</label>
+          <input class="thread-spacing" id="thread-title" type="text">
+          <label class="thread-spacing" style="margin:20px;">Comment</label>
+          <input class="thread-spacing"  id="thread-comment-content" type="text">
+          <button class="ui green button" style="margin:20px;" onclick="StartThread()">Start a thread</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="createPollSection" style="display: none">
+      <div class="ui container center poll-choose">
+          <span>Choose Type of Poll Query</span>
+          <select id="selectionDropDown" class = "ui dropdown font-style" onchange="ShowHideDiv()">
+            <option disabled selected value> select your option here </option>
+            <option value="M">Single Answers</option>
+            <option value="S">Multiple Answer</option>
+          </select>
+      </div>
+      <h4 class="ui horizontal divider header">
+          <i class="bar chart icon"></i>
+          Creating a poll for you!
+        </h4>
+      <div id="multiSelect" style="display: none">
+        <form id="MSForm">
+          GMail
+          <input type="checkbox" name="gender">
+          <br> HotMail
+          <input type="checkbox" name="gender">
+          <br> Other Email Service
+          <input type="checkbox" name="gender" onclick="myFunction()">
+        </form>
+        <button onclick="MSButtonHandler()">Done</button>
+      </div>
+    
+      <div id="singleSelect" style="display: none">
+        <form id="SSForm">
+          <div class="ui fluid input focus">
+            <input type="text" id="gender" value="" placeholder="Your Poll Query Here ..">
+          </div>
+        </form>
+        <button class="positive ui button" onclick="SSButtonHandler()">Done</button>
+      </div>
+    
+      <div id="radioEditor" class="header" style="display: none">
+        <h3 id="radioTitle">Title ?</h3>
+        <input type="text" id="myInput" placeholder="Title...">
+         <div class="ui buttons">
+            <button onclick="newElement()" class="ui positive button addBtn">Add option</button>
+            <div class="or"></div>
+            <button onclick = "finishRadio()" class="ui button">Finish creating question</button>
+          </div>
+      </div>
+    
+      <ul  id="myUL">
+      </ul>
+      </div>
+      <div class="ui container" id="everything">
+        <h3 class="ui dividing header">Discussions/Poll Below</h3>
+        <form id="everythingForm">
+        </form>
+      </div>
+      <script type="text/javascript">
+          singleSelect.style.display = "block";
+          multiSelect.style.display = "none";
+          loadEverything();
+      </script>
+</div>
+  </div>
+
+  </ul>
+</body>
+<html>

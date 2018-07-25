@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)file:///D:/Apps/Hack/ChewOver/source/cssmenu/index.html? -->
+<html lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./CSS MenuMaker_files/styles.css">
+  <link rel="stylesheet" href="./CSS MenuMaker_files/semantic.min.css">
+  <script src="./CSS MenuMaker_files/jquery-latest.min.js.download" type="text/javascript"></script>
+  </head><body><script src="https: cdnjs.cloudflare.com="" ajax="" libs="" jquery="" 3.1.1="" jquery.min.js"="">
+  <script src="https: cdnjs.cloudflare.com="" ajax="" libs="" semantic-ui="" 2.2.9="" semantic.min.js"="">
+  <script src="./CSS MenuMaker_files/script.js.download"></script>
+  <title>CSS MenuMaker</title>
+
+
+
+  <div class="ui container segment main-container">
+      <div class="ui container center poll-choose">
+          <span>Choose Type of Poll Query</span>
+        <select id="selectionDropDown" class="ui dropdown font-style" onchange="ShowHideDiv()">
+          <option disabled="" selected="" value=""> select your option here </option>
+          <option value="M">Multiple Answers</option>
+          <option value="S">Single Answer</option>
+        </select>
+      </div>
+      <h4 class="ui horizontal divider header">
+          <i class="bar chart icon"></i>
+          Creating a poll for you!
+        </h4>
+      <div id="multiSelect" style="display: none">
+        <form id="MSForm">
+          GMail
+          <input type="checkbox" name="gender">
+          <br> HotMail
+          <input type="checkbox" name="gender">
+          <br> Other Email Service
+          <input type="checkbox" name="gender" onclick="myFunction()">
+        </form>
+        <button onclick="MSButtonHandler()">Done</button>
+      </div>
+    
+      <div id="singleSelect" style="display: block;">
+        <form id="SSForm">
+          Generate Your Single Option Question :
+          <div class="ui fluid input focus">
+            <input type="text" id="gender" value="Enter your question here">
+          </div>
+        </form>
+        <button class="ui button" onclick="SSButtonHandler()">Done</button>
+      </div>
+    
+      <div id="radioEditor" class="header" style="display: block;">
+        <h3 id="radioTitle">Enter your question here</h3>
+        <input type="text" id="myInput" placeholder="Title...">
+         <div class="ui buttons">
+            <button onclick="newElement()" class="ui positive button addBtn">Add option</button>
+            <div class="or"></div>
+            <button onclick="finishRadio()" class="ui button">Finish creating question</button>
+          </div>
+      </div>
+    
+      <ul class="ui list" id="myUL">
+      <li class="ui item segment">hj<span class="close">×</span></li></ul>
+      
+      <div class="ui container" id="everything">
+        <h3>Poll Queries Below</h3>
+        <form id="everythingForm">
+        </form>
+      </div>
+  </div>
+
+  
+
+</script src="https:></script src="https:></body></html>

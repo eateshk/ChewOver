@@ -1,0 +1,47 @@
+.main-container{
+  margin-top:100px !important;
+}
+.font-style{
+  font-size: 12px;
+}
+
+.poll-choose{
+  width: 27% !important;
+}
+
+#singleSelect{
+  margin-top:20px;
+}
+
+li{
+  color: rgba(9, 9, 46, 0.925);
+}
+
+#myUL{
+  list-style: none;
+}
+
+.search{
+  margin-top: 30px;
+  margin-bottom : 30px;
+}
+
+#searchForums{
+  width: 51% !IMPORTANT;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.stylePollQuestion{
+  margin-top: 24px;
+    margin-bottom: 30px;
+}
+
+.thread-text{
+  text-align: center;
+}
+
+.thread-spacing{
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
