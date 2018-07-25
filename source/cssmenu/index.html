@@ -17,7 +17,7 @@
 
 <body>
   <div class="ui center container segment main-container">
-      <div class="blue ui buttons">
+      <div class="fluid blue ui buttons">
           <button class="ui button"  onclick="showForumSearch()">Search Forums</button>
           <button class="ui button" onclick="showCreatePolls()">Create Survey Poll</button>
           <button class="ui button" onclick="showCreateThread()">Create Discussion Thread</button>
@@ -26,10 +26,10 @@
     <div id="searchForums">
       <div class="ui right aligned category search">
       <div class="ui icon input">
-      <input id="searchForumsText" class="prompt" type="text" placeholder="Search Forums ..">
+      <input id="searchForumsText" class="search prompt" type="text" placeholder="Search Forums ..">
       <i class="search icon" onclick="showSearchedItems"></i>
       </div>
-      <button onclick="showSearchedItems()">Go</button>
+      <button class = "ui icon button circular" onclick="showSearchedItems()"><i class="icon search"> </i></button>
       </div>
     </div>
 
@@ -93,7 +93,7 @@
       </ul>
       </div>
       <div class="ui container" id="everything">
-        <h3>Discussions/Poll Below</h3>
+        <h3 class="ui dividing header">Discussions/Poll Below</h3>
         <form id="everythingForm">
         </form>
       </div>

@@ -20,3 +20,14 @@ li{
 #myUL{
   list-style: none;
 }
+
+.search{
+  margin-top: 30px;
+  margin-bottom : 30px;
+}
+
+#searchForums{
+  width: 51% !IMPORTANT;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
