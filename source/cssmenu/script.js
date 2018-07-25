@@ -20,29 +20,29 @@ var everything = [{
   title: "Title goes here",
   id: 'c1',
   avatar: '../asset/image/avatar.png',
-  author: 'author',
+  author: 'Deepak',
   metadata: 'metdata',
-  text: 'sometext doggy',
+  text: 'I am gonna tell a joke',
   children: [{
     id: 'c2',
     avatar: '../asset/image/avatar.png',
-    author: 'child2 author',
+    author: 'Deepak',
     metadata: 'metdata',
-    text: 'sometext',
+    text: 'a joke',
     children: [{
       id: 'c2.1',
       avatar: '../asset/image/avatar.png',
-      author: 'child2.1 author',
+      author: 'Eatesh',
       metadata: 'metdata',
-      text: 'sometext',
+      text: 'haha',
       children: []
     }]
   }, {
     id: 'c5',
     avatar: '../asset/image/avatar.png',
-    author: 'child5 added',
+    author: 'Venkata',
     metadata: 'metdata',
-    text: 'sometext',
+    text: 'I like this forum!',
     children: []
   }]
 }];
