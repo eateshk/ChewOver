@@ -1,23 +1,23 @@
 var everything = [{
   "type": "radio",
-  "title": "How is your dog doing now ?",
+  "title": "Which is your favorite soccer club ?",
   "options": [
-    "Doing Well, In recovery phase.",
-    "Knocking!",
-    "Need to visit vet ;(",
-    "Don't know"
+    "Barcelona",
+    "Arsenal",
+    "Man Utd",
+    "Chelsea"
   ]
-}, {}, {
+}, {
   "type": "radio",
-  "title": "What's your gender ?",
+  "title": "What's your age group ?",
   "options": [
-    "Male",
-    "Female",
+    "10-20",
+    "20-40",
     "Other"
   ]
 }, {
   type: "comment",
-  title: "Title goes here",
+  title: "Anyone with good joke ?",
   id: 'c1',
   avatar: '../asset/image/avatar.png',
   author: 'Deepak',
