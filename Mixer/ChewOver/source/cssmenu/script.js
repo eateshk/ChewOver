@@ -57,7 +57,7 @@ var everything =[
   },
   {
     "type": "comment",
-    "title": "What tech-stack Mixer is using for such a nice Customer Engagement Forums ?",
+    "title": "What tech-stack Mixer is using for such nice Customer Engagement Forums ?",
     "id": 975,
     "avatar": "../asset/image/avatar.png",
     "author": "Ashis",
