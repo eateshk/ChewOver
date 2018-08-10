@@ -50,7 +50,7 @@ var everything =[
         "avatar": "../asset/image/avatar.png",
         "author": "Venkata aka BOSS",
         "metadata": "Now",
-        "text": "Mixer - thanks for building this amazing forum. here's the link - http://mixer.com/boomboom",
+        "text": "Here http://mixer.com/boomboom",
         "children": []
       }
     ]
