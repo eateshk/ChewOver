@@ -24,19 +24,19 @@ var everything = [
   id: 'c1',
   avatar: '../asset/image/avatar.png',
   author: 'Jayasurya aka JJ',
-  metadata: 'metdata',
+  metadata: '2 days ago',
   text: 'yay !!',
   children: [{
     id: 'c2',
     avatar: '../asset/image/avatar.png',
     author: 'Anu',
-    metadata: 'metdata',
+    metadata: '1 day ago',
     text: 'I\'m feeling crazy !!',
     children: [{
       id: 'c2.1',
       avatar: '../asset/image/avatar.png',
       author: 'Eatesh',
-      metadata: 'metdata',
+      metadata: '3 hours ago',
       text: '30 more mins, can anyone share the link to the streaming ?',
       children: []
     }]
@@ -44,7 +44,7 @@ var everything = [
     id: 'c5',
     avatar: '../asset/image/avatar.png',
     author: 'Venkata',
-    metadata: 'metdata',
+    metadata: 'Now',
     text: 'Mixer - thanks for building this amazing forum. here\'s the link - http://mixer.com/boomboom',
     children: []
   }]

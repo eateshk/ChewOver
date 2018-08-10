@@ -9,7 +9,7 @@ var state = [
 		id: 'c1',
 		avatar: '../../../asset/image/avatar.png',
 		author: 'author',
-		metadata: 'metdata',
+		metadata: '2 days ago',
 		text: 'sometext',
 		children: [{
 			id: 'c2',
@@ -21,7 +21,7 @@ var state = [
         id: 'c2.1',
         avatar: '../../../asset/image/avatar.png',
         author: 'child2.1 author',
-        metadata: 'metdata',
+        metadata: '1 day ago',
         text: 'sometext',
         children: []
       }]
@@ -30,7 +30,7 @@ var state = [
 			id: 'c5',
 			avatar: '../../../asset/image/avatar.png',
 			author: 'child5 added',
-			metadata: 'metdata',
+			metadata: '1 day ago',
 			text: 'sometext',
 			children: []
 		}
@@ -40,7 +40,7 @@ var state = [
 		id: 'c4',
 		avatar: '../../../asset/image/avatar.png',
 		author: 'child 4 author',
-		metadata: 'metdata',
+		metadata: '5 hours ago',
 		text: 'sometext',
 		children: []
   }
